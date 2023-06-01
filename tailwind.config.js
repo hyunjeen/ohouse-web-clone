@@ -1,4 +1,6 @@
+const plugin = require("tailwindcss/plugin");
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -14,5 +16,12 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function({ addVariant }) {
+      addVariant('current', '&.active');
+      addVariant('children', '& > *');
+    }),
+
+    require("tailwindcss-inner-border"),
+  ],
 }
