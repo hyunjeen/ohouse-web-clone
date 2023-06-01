@@ -4,13 +4,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/router";
 
-function Auth() {
+function LoginMenu() {
   const router = useRouter();
   const redirectUrl = router.pathname.replaceAll("/", "%2F");
+
   return (
     <div className={"flex items-center gap-4 text-[14px]"}>
       <Link href={`/users/sign_in?redirect_to=${redirectUrl}`}>로그인</Link>
-      <Link href={"/register"}>회원가입</Link>
+      <Link href={"/un_users/new"}>회원가입</Link>
       <Link href={"/forum"}>고객센터</Link>
       <button
         className={
@@ -25,4 +26,4 @@ function Auth() {
   );
 }
 
-export default Auth;
+export default LoginMenu;

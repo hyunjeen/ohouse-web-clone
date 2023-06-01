@@ -1,8 +1,8 @@
 import "@/styles/globals.css";
-import type { AppProps } from "next/app";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import type { AppContext, AppProps } from "next/app";
 import { Noto_Sans_KR } from "next/font/google";
 import { config } from "@fortawesome/fontawesome-svg-core";
-import "@fortawesome/fontawesome-svg-core/styles.css";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistor, store } from "@/store/storeConfig";
@@ -40,7 +40,7 @@ export default function App({ Component, pageProps }: AppProps) {
     </Provider>
   );
 }
-App.getInitialProps = async (context: any) => {
+App.getInitialProps = async (context: AppContext) => {
   const { ctx, Component } = context;
   let pageProps = {};
 
