@@ -2,14 +2,14 @@ import React from "react";
 import Header from "@/components/layer/header/Header";
 import { ChildrenProps } from "@/types/childrenProps";
 type LayoutProps = ChildrenProps;
-function Layout({ children }: LayoutProps) {
+function HeaderLayout({ children }: LayoutProps) {
   return (
     <>
       <Header />
       <main>{children}</main>
-      <footer></footer>
+      <footer />
     </>
   );
 }
 
-export default Layout;
+export default HeaderLayout;
