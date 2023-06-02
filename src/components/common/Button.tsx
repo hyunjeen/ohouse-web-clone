@@ -1,9 +1,15 @@
-import React from "react";
 import { ChildrenProps } from "@/types/childrenProps";
 
-function Button({ children }: ChildrenProps) {
+interface ButtonProps extends ChildrenProps {
+  type?: "submit";
+}
+
+function Button({ children, type }: ButtonProps) {
   return (
-    <button className={`w-full bg-blue-400 mt-5 py-4 text-white rounded`}>
+    <button
+      className={`w-full bg-blue-400 mt-5 py-4 text-white rounded`}
+      type={type && "button"}
+    >
       {children}
     </button>
   );
