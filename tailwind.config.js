@@ -27,6 +27,5 @@ module.exports = {
       addVariant('children', '& > *');
     }),
 
-    require("tailwindcss-inner-border"),
   ],
 }
