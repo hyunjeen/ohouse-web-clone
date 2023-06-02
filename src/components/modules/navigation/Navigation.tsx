@@ -10,7 +10,7 @@ function Navigation({ order }: { order: number }) {
         id,
         src: sub[0].src,
       })),
-    [order]
+    []
   );
   return (
     <div className={`flex-1`}>
