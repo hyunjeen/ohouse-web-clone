@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistor, store } from "@/store/storeConfig";
 import PagePathMiddleware from "@/middleware/PagePath.middleware";
-import Layout from "@/layout/Layout";
+import Layout from "@/components/layout/Layout";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { noToSansKr } from "@/styles/font";
 

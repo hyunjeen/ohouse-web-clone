@@ -19,7 +19,7 @@ function LoginMenu() {
         }
         onClick={() => {}}
       >
-        <span>글쓰기</span>
+        <span className={`whitespace-nowrap`}>글쓰기</span>
         <FontAwesomeIcon icon={faAngleDown} />
       </button>
     </div>

@@ -9,7 +9,7 @@ function SearchInput() {
         icon={faMagnifyingGlass}
         className={`ml-1 mr-2 translate-y-[2px]`}
       />
-      <input className={` outline-0`} placeholder={"통합검색"} />
+      <input className={`w-full outline-0`} placeholder={"통합검색"} />
     </div>
   );
 }

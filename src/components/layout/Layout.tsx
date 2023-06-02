@@ -1,8 +1,8 @@
 import React from "react";
-import HeaderLayout from "@/layout/HeaderLayout";
-import FullLayout from "@/layout/FullLayout";
+import HeaderLayout from "@/components/layout/HeaderLayout";
+import FullLayout from "@/components/layout/FullLayout";
 import type { ChildrenProps } from "@/types/childrenProps";
-import type { LayoutProps } from "@/layout/types";
+import type { LayoutProps } from "@/components/layout/types";
 
 function Layout({ pathname, children }: LayoutProps & ChildrenProps) {
   const FullLayoutPath = ["/users/sign_in", "/un_users/new"];
