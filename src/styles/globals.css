@@ -1,7 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+:root {
+    --max-container-size: 1280px
+}
 
-html{
+html {
     color: #2F3438;
 }
