@@ -11,7 +11,7 @@ function SubNavigation({
 }) {
   const data: MainDummyListItems[][] = useMemo(
     () => DummyListItem.map(({ sub }) => sub),
-    [DummyListItem]
+    []
   );
   const viewData = useMemo(() => data[mainOrder], [data, mainOrder]);
 
