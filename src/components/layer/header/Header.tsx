@@ -9,6 +9,7 @@ import { RootState } from "@/store/storeConfig";
 import SubNavigation from "@/components/modules/navigation/SubNavigation";
 import LoginMenu from "@/components/modules/auth/LoginMenu";
 import HeaderInnerWrap from "@/components/layer/header/Header.innerWrap";
+import HotTopic from "@/components/modules/hot_topic/HotTopic";
 
 const Header = () => {
   const mainOrder = useSelector(
@@ -28,6 +29,7 @@ const Header = () => {
       </HeaderInnerWrap>
       <HeaderInnerWrap>
         <SubNavigation mainOrder={mainOrder} order={subOrder} />
+        <HotTopic />
       </HeaderInnerWrap>
     </header>
   );
