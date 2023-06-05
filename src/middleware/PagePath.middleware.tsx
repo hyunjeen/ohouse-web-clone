@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import {
   setMainMenuOrder,
   setSubMenuOrder,
-} from "@/store/menuState/MenuState.slice";
+} from "@/store/menuOrder/menuOrder.slice";
 import type { ChildrenProps } from "@/types/childrenProps";
 
 const PagePathMiddleware = ({ children }: ChildrenProps) => {

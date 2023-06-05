@@ -29,12 +29,15 @@ function SideBanner() {
           return `<span}>${current}/${total}</span>`;
         },
       }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log("slide change")}
       className={`flex basis-[21.875%] ml-4`}
     >
       <SwiperSlide>
-        <Image src={slide1} alt={"slide1"} className={`object-cover h-full`} />
+        <Image
+          src={slide1}
+          alt={"slide1"}
+          className={`object-cover h-full`}
+          placeholder={"blur"}
+        />
       </SwiperSlide>
       <SwiperSlide>
         <Image src={slide2} alt={"slide2"} className={`object-cover h-full`} />

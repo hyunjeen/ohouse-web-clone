@@ -4,5 +4,4 @@ export const noToSansKr = Noto_Sans_KR({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
   display: "swap",
-  variable: "--global-font",
 });

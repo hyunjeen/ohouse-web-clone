@@ -11,6 +11,7 @@ function Banner() {
         src={bannerImage}
         alt={"배너이미지"}
         className={`transition ease-in-out hover:scale-105 flex flex-1`}
+        placeholder={"blur"}
       />
       <BannerInfo />
     </section>

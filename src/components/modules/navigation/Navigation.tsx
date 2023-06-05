@@ -13,7 +13,7 @@ function Navigation({ order }: { order: number }) {
     []
   );
   return (
-    <div className={`flex-1`}>
+    <div className={`mr-auto text-[18px] font-medium sticky`}>
       <ListView order={order} data={data} />
     </div>
   );

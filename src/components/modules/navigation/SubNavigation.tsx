@@ -17,7 +17,7 @@ function SubNavigation({
 
   return (
     <div className={`flex-1`}>
-      <ListView order={order} data={viewData} />
+      <ListView order={order} data={viewData} sub={true} />
     </div>
   );
 }

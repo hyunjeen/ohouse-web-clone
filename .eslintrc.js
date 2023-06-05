@@ -21,8 +21,9 @@ module.exports = {
     }
   },
   ignorePatterns: ["*.js"],
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
+    'prettier/prettier': 'error',
     "@typescript-eslint/no-empty-function": ["off"],
     "import/no-anonymous-default-export": ["off"]
   },

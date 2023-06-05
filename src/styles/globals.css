@@ -9,3 +9,7 @@ html {
     color: #2F3438;
     font-size: 16px;
 }
+
+.swiper-button-prev:after, .swiper-button-next:after {
+    width: 100% !important;
+}

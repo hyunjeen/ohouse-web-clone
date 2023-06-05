@@ -18,9 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <GoogleOAuthProvider
-            clientId={
-              "827825074660-en7jqfletrlq21bilafn0g1fme3i4du1.apps.googleusercontent.com"
-            }
+            clientId={process.env.NEXT_PUBLIC_GOOGLE_OAUTH_KEY as string}
           >
             <PagePathMiddleware>
               <Layout pathname={pageProps?.pathname}>
@@ -35,7 +33,6 @@ export default function App({ Component, pageProps }: AppProps) {
           font-family: ${noToSansKr.style.fontFamily};
         }
       `}</style>
-      ;
     </>
   );
 }

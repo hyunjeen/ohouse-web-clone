@@ -13,17 +13,17 @@ import HotTopic from "@/components/modules/hot_topic/HotTopic";
 
 const Header = () => {
   const mainOrder = useSelector(
-    (state: RootState) => state.persistReducer.breadCrumbSlugSlice.mainMenuOrder
+    (state: RootState) => state.rootReducer.menuOrderReducer.mainMenuOrder
   );
   const subOrder = useSelector(
-    (state: RootState) => state.persistReducer.breadCrumbSlugSlice.subMenuOrder
+    (state: RootState) => state.rootReducer.menuOrderReducer.subMenuOrder
   );
   return (
     <header>
       <HeaderInnerWrap>
         <Logo />
         <Navigation order={mainOrder} />
-        <SearchInput />
+        <SearchInput className={`hidden lg:flex `} />
         <FontAwesomeIcon icon={faCartPlus} className={"text-xl"} />
         <LoginMenu />
       </HeaderInnerWrap>

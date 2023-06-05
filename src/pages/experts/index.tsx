@@ -1,7 +1,5 @@
-import React from "react";
-
 function Index() {
-  return <div></div>;
+  return <div>dsadas</div>;
 }
 
 export default Index;
