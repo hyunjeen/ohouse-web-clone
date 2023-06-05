@@ -1,6 +1,6 @@
-import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-regular-svg-icons";
+import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
 
 interface AvatarProps {
   src?: string;
@@ -10,9 +10,9 @@ interface AvatarProps {
 function Avatar({ src, name }: AvatarProps) {
   return (
     <div className={`flex items-center gap-2 text-white`}>
-      <div className={`flex bg-gray-400 p-1 rounded-[50%]`}>
+      <div className={`flex rounded-[50%] bg-gray-400 p-1`}>
         {src ? (
-          <Image src={src} alt={"유저아바타이미지"} />
+          <Image src={src} alt={'유저아바타이미지'} />
         ) : (
           <FontAwesomeIcon icon={faUser} width={16} height={16} />
         )}

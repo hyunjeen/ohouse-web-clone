@@ -9,4 +9,5 @@ module.exports = {
     tabWidth: 2,
     // 코드 한줄이 maximum 80칸
     printWidth: 80,
+    plugins: ["prettier-plugin-tailwindcss"]
 };

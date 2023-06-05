@@ -8,8 +8,8 @@ function ErrorMessageBlock({ error, message, $mb }: ErrorMessageBlockProps) {
   return (
     <>
       {error && (
-        <div className={`flex justify-start w-full ${$mb ? "mb-3" : ""}`}>
-          <span className="text-red-600 font-thin text-sm pl-1">{message}</span>
+        <div className={`flex w-full justify-start ${$mb ? 'mb-3' : ''}`}>
+          <span className="pl-1 text-sm font-thin text-red-600">{message}</span>
         </div>
       )}
     </>

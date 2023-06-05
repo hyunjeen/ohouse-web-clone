@@ -1,6 +1,6 @@
-import React, { useMemo } from "react";
-import ListView from "@/components/modules/navigation/list/ListView";
-import { DummyListItem, MainDummyListItems } from "@/dummyData/menuItem.data";
+import React, { useMemo } from 'react';
+import ListView from '@/components/modules/navigation/list/ListView';
+import { DummyListItem, MainDummyListItems } from '@/dummyData/menuItem.data';
 
 function SubNavigation({
   mainOrder,

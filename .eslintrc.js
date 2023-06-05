@@ -10,6 +10,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'next/core-web-vitals',
     'plugin:prettier/recommended',
+    "plugin:tailwindcss/recommended"
   ],
   overrides: [],
   parser: '@typescript-eslint/parser',
@@ -22,9 +23,17 @@ module.exports = {
   },
   ignorePatterns: ["*.js"],
   plugins: ['react', '@typescript-eslint', 'prettier'],
+  settings: {
+    tailwindcss: {
+      whitelist: ["swiper-pagination", "active"]
+    }
+  },
   rules: {
     'prettier/prettier': 'error',
     "@typescript-eslint/no-empty-function": ["off"],
-    "import/no-anonymous-default-export": ["off"]
+    "import/no-anonymous-default-export": ["off"],
+    "react/jsx-uses-react": ["off"],
+    "react/react-in-jsx-scope": ["off"],
+
   },
 };

@@ -1,6 +1,6 @@
-import React from "react";
-import Header from "@/components/layer/header/Header";
-import type { ChildrenProps } from "@/types/childrenProps";
+import React from 'react';
+import Header from '@/components/layer/header/Header';
+import type { ChildrenProps } from '@/types/childrenProps';
 
 type LayoutProps = ChildrenProps;
 

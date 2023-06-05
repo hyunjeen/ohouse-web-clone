@@ -1,13 +1,13 @@
-import Input from "@/components/common/Input";
-import Button from "@/components/common/Button";
-import Link from "next/link";
-import GoogleAuth from "@/components/common/GoogleAuth";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { LoginValidateSchema } from "@/schema/LoginValidate.schema";
-import ErrorMessageBlock from "@/components/common/ErrorMessageBlock";
-import Form from "@/components/common/Form";
-import type { LoginDto } from "@/components/modules/auth/types";
+import Input from '@/components/common/Input';
+import Button from '@/components/common/Button';
+import Link from 'next/link';
+import GoogleAuth from '@/components/common/GoogleAuth';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { LoginValidateSchema } from '@/schema/LoginValidate.schema';
+import ErrorMessageBlock from '@/components/common/ErrorMessageBlock';
+import Form from '@/components/common/Form';
+import type { LoginDto } from '@/components/modules/auth/types';
 
 function LoginForm() {
   const {
@@ -22,11 +22,11 @@ function LoginForm() {
 
   return (
     <Form onSubmit={handleSubmit(onSubmitHandler)}>
-      <h2 className={`flex justify-center font-medium text-2xl`}>로그인</h2>
-      <div className={`flex flex-col gap-1 mt-5 items-center w-full`}>
+      <h2 className={`flex justify-center text-2xl font-medium`}>로그인</h2>
+      <div className={`mt-5 flex w-full flex-col items-center gap-1`}>
         <Input
-          placeholder={"이메일"}
-          {...register("email")}
+          placeholder={'이메일'}
+          {...register('email')}
           error={!!errors.email}
         />
         <ErrorMessageBlock
@@ -34,21 +34,21 @@ function LoginForm() {
           message={errors.email?.message}
         />
         <Input
-          type={"password"}
+          type={'password'}
           error={!!errors.password}
-          placeholder={"비밀번호"}
-          {...register("password")}
+          placeholder={'비밀번호'}
+          {...register('password')}
         />
         <ErrorMessageBlock
           error={!!errors.password}
           message={errors.password?.message}
         />
       </div>
-      <div className={`flex flex-col gap-4 w-full`}>
-        <Button type={"submit"}>로그인</Button>
-        <div className={`flex gap-3 mt-5 justify-center`}>
-          <Link href={"/un_users/new"}>회원가입</Link>
-          <Link href={""}>비밀번호 재설정</Link>
+      <div className={`flex w-full flex-col gap-4`}>
+        <Button type={'submit'}>로그인</Button>
+        <div className={`mt-5 flex justify-center gap-3`}>
+          <Link href={'/un_users/new'}>회원가입</Link>
+          <Link href={''}>비밀번호 재설정</Link>
         </div>
         <GoogleAuth />
       </div>

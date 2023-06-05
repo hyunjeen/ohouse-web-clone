@@ -1,4 +1,4 @@
-import { ForwardedRef, forwardRef } from "react";
+import { ForwardedRef, forwardRef } from 'react';
 
 interface InputProps {
   placeholder: string;
@@ -14,13 +14,13 @@ const Input = forwardRef(
     <input
       ref={ref}
       type={type}
-      className={`w-full h-[50px] border rounded px-4 py-3 outline-0 ${
-        error ? "border-red-600" : ""
+      className={`h-[50px] w-full rounded border px-4 py-3 outline-0 ${
+        error ? 'border-red-600' : ''
       }`}
       placeholder={placeholder}
       {...props}
     />
   )
 );
-Input.displayName = "Input";
+Input.displayName = 'Input';
 export default Input;

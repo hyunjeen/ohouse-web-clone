@@ -1,4 +1,4 @@
-import { ChildrenProps } from "@/types/childrenProps";
+import { ChildrenProps } from '@/types/childrenProps';
 
 interface FormProps extends ChildrenProps {
   onSubmit: () => void;
@@ -8,8 +8,8 @@ function Form({ children, onSubmit }: FormProps) {
   return (
     <form
       className={
-        "flex justify-center items-center " +
-        "max-w-[350px] m-auto h-full flex-col w-full"
+        'flex items-center justify-center ' +
+        'm-auto h-full w-full max-w-[350px] flex-col'
       }
       onSubmit={onSubmit}
     >

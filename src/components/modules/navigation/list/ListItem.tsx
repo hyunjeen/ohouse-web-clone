@@ -1,5 +1,5 @@
-import type { ChildrenProps } from "@/types/childrenProps";
-import Link from "next/link";
+import type { ChildrenProps } from '@/types/childrenProps';
+import Link from 'next/link';
 
 interface ListItemProps extends ChildrenProps {
   primaryId: number;
@@ -11,13 +11,13 @@ interface ListItemProps extends ChildrenProps {
 function ListItem(props: ListItemProps) {
   return (
     <li
-      className={`flex items-center current:text-blue-500 hover:text-blue-500 ${
-        props.currentId === props.primaryId ? "active" : ""
-      } }`}
+      className={`flex items-center hover:text-blue-500 current:text-blue-500 ${
+        props.currentId === props.primaryId ? 'active' : ''
+      }`}
     >
       <Link
-        className={`active:text-blue-500 inline-block px-4 ${
-          props.sub ? "py-3" : "py-5"
+        className={`inline-block px-4 current:text-blue-500 ${
+          props.sub ? 'py-3' : 'py-5'
         }`}
         href={props.src}
       >

@@ -1,5 +1,5 @@
-import ServiceMenuItem from "@/components/modules/service_menu/ServiceMenuItem";
-import { serviceMenuItems } from "@/dummyData/serviceMenu.data";
+import ServiceMenuItem from '@/components/modules/service_menu/ServiceMenuItem';
+import { serviceMenuItems } from '@/dummyData/serviceMenu.data';
 
 function ServiceMenu() {
   return (

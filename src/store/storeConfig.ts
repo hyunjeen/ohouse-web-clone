@@ -1,7 +1,7 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { PERSIST, persistStore, PURGE } from "redux-persist";
-import { menuOrderReducer } from "@/store/menuOrder/menuOrder.slice";
-import { userReducer } from "@/store/user/user.slice";
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { PERSIST, persistStore, PURGE } from 'redux-persist';
+import { menuOrderReducer } from '@/store/menuOrder/menuOrder.slice';
+import { userReducer } from '@/store/user/user.slice';
 
 const rootReducer = combineReducers({
   menuOrderReducer,

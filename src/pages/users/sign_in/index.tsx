@@ -1,9 +1,9 @@
-import React from "react";
-import LoginForm from "@/components/modules/auth/LoginForm";
+import React from 'react';
+import LoginForm from '@/components/modules/auth/LoginForm';
 
 function Index() {
   return (
-    <section className={"w-full h-[100vh]"}>
+    <section className={'h-[100vh] w-full'}>
       <LoginForm />
     </section>
   );

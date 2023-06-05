@@ -1,6 +1,6 @@
-import React, { useMemo } from "react";
-import ListView from "@/components/modules/navigation/list/ListView";
-import { DummyListItem, MainDummyListItems } from "@/dummyData/menuItem.data";
+import React, { useMemo } from 'react';
+import ListView from '@/components/modules/navigation/list/ListView';
+import { DummyListItem, MainDummyListItems } from '@/dummyData/menuItem.data';
 
 function Navigation({ order }: { order: number }) {
   const data: MainDummyListItems[] = useMemo(
@@ -13,7 +13,7 @@ function Navigation({ order }: { order: number }) {
     []
   );
   return (
-    <div className={`mr-auto text-[18px] font-medium sticky`}>
+    <div className={`sticky mr-auto text-[18px] font-medium`}>
       <ListView order={order} data={data} />
     </div>
   );

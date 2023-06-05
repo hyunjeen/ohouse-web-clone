@@ -1,5 +1,5 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
 
 interface ServiceMenusItemProps {
   title: string;
@@ -8,12 +8,12 @@ interface ServiceMenusItemProps {
 
 function ServiceMenuItem({ title, iconUrl }: ServiceMenusItemProps) {
   return (
-    <div className={`flex flex-col gap-2 items-center cursor-pointer`}>
+    <div className={`flex cursor-pointer flex-col items-center gap-2`}>
       <Image
         src={iconUrl}
         width={128}
         height={111}
-        sizes={"100vw"}
+        sizes={'100vw'}
         alt={title}
         className={` md:w-full`}
       />

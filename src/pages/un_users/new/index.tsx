@@ -1,8 +1,8 @@
-import RegisterForm from "@/components/modules/auth/RegisterForm";
+import RegisterForm from '@/components/modules/auth/RegisterForm';
 
 function Index() {
   return (
-    <section className={"w-full h-[100vh]"}>
+    <section className={'h-[100vh] w-full'}>
       <RegisterForm />
     </section>
   );

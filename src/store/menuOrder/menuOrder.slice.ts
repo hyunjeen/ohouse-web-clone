@@ -1,6 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
-import storage from "redux-persist/lib/storage/session";
-import { persistReducer as PersistReducer } from "redux-persist";
+import { createSlice } from '@reduxjs/toolkit';
+import storage from 'redux-persist/lib/storage/session';
+import { persistReducer as PersistReducer } from 'redux-persist';
 
 export interface MenuOrderState {
   mainMenuOrder: number;
@@ -13,7 +13,7 @@ const initialState: MenuOrderState = {
 };
 
 export const menuOrderSlice = createSlice({
-  name: "menuOrder",
+  name: 'menuOrder',
   initialState,
   reducers: {
     setMainMenuOrder: (state, action) => {
@@ -29,9 +29,9 @@ export const menuOrderSlice = createSlice({
 });
 
 const persistConfig = {
-  key: "menu_order",
+  key: 'menu_order',
   storage,
-  whitelist: ["menuOrderSlice"],
+  whitelist: ['menuOrderSlice'],
 };
 
 export const menuOrderReducer = PersistReducer(

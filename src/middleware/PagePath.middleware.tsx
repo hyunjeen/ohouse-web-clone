@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
-import { useRouter } from "next/router";
-import { DummyListItem } from "@/dummyData/menuItem.data";
-import { useDispatch } from "react-redux";
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { DummyListItem } from '@/dummyData/menuItem.data';
+import { useDispatch } from 'react-redux';
 import {
   setMainMenuOrder,
   setSubMenuOrder,
-} from "@/store/menuOrder/menuOrder.slice";
-import type { ChildrenProps } from "@/types/childrenProps";
+} from '@/store/menuOrder/menuOrder.slice';
+import type { ChildrenProps } from '@/types/childrenProps';
 
 const PagePathMiddleware = ({ children }: ChildrenProps) => {
   const { pathname } = useRouter();

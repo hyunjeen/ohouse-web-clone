@@ -1,17 +1,17 @@
-import SwiperCore, { A11y, Autoplay, Navigation } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown, faPlay } from "@fortawesome/free-solid-svg-icons";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+import SwiperCore, { A11y, Autoplay, Navigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDown, faPlay } from '@fortawesome/free-solid-svg-icons';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 SwiperCore.use([Navigation, Autoplay]);
 
 const data = Array.from({ length: 5 }, (val, index) => {
   index++;
-  const ratingState = index % 2 === 0 ? "down" : "up";
+  const ratingState = index % 2 === 0 ? 'down' : 'up';
   return { id: index, title: `title-${index}`, ratingState: ratingState };
 });
 
@@ -21,32 +21,32 @@ function HotTopic() {
       modules={[Navigation, A11y]}
       slidesPerView={1}
       loop
-      direction={"vertical"}
+      direction={'vertical'}
       autoplay={{
         delay: 3000,
       }}
       init={true}
       observer={true}
       observeParents={true}
-      className={`h-[40px] flex items-center overflow-hidden `}
+      className={`flex h-[40px] items-center overflow-hidden `}
     >
       {data.map((value) => (
         <SwiperSlide key={value.id} className={`flex items-center`}>
-          <div className={`flex gap-2 items-center `}>
+          <div className={`flex items-center gap-2 `}>
             <span className={`font-medium`}>{value.id}</span>
             <FontAwesomeIcon
               icon={faPlay}
               className={`${
-                value.ratingState === "up"
-                  ? "-rotate-90 text-red-600 translate-y-[1px]"
-                  : "rotate-90 text-blue-600 translate-y-[2px]"
-              } text-[8px] mx-1 `}
+                value.ratingState === 'up'
+                  ? 'translate-y-[1px] -rotate-90 text-red-600'
+                  : 'translate-y-[2px] rotate-90 text-blue-600'
+              } mx-1 text-[8px] `}
             />
             <span className={`w-[104px]`}>{value.title}</span>
           </div>
         </SwiperSlide>
       ))}
-      <FontAwesomeIcon icon={faAngleDown} className={`text-gray-400 ml-5`} />
+      <FontAwesomeIcon icon={faAngleDown} className={`ml-5 text-gray-400`} />
     </Swiper>
   );
 }
