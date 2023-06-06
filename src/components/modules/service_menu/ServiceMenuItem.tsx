@@ -13,9 +13,8 @@ function ServiceMenuItem({ title, iconUrl }: ServiceMenusItemProps) {
         src={iconUrl}
         width={128}
         height={111}
-        sizes={'100vw'}
         alt={title}
-        className={` md:w-full`}
+        className={`md:w-full`}
       />
       <span className={`whitespace-nowrap`}>{title}</span>
     </div>

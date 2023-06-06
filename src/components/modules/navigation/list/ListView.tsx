@@ -10,14 +10,22 @@ interface ListViewProps {
 
 function ListView({ data, order, sub }: ListViewProps) {
   return (
-    <ul className={'flex items-center '}>
-      {data.map(({ title, src, id }) => (
-        <ListItem key={id} src={src} currentId={id} primaryId={order} sub={sub}>
-          {title}
-        </ListItem>
-      ))}
-    </ul>
+    <div className={`flex-1`}>
+      <ul className={'flex items-center '}>
+        {data.map(({ title, src, id }) => (
+          <ListItem
+            key={id}
+            src={src}
+            currentId={id}
+            primaryId={order}
+            sub={sub}
+          >
+            {title}
+          </ListItem>
+        ))}
+      </ul>
+    </div>
   );
 }
 
-export default ListView;
+export default React.memo(ListView);

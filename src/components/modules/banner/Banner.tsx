@@ -5,7 +5,7 @@ import BannerInfo from '@/components/modules/banner/BannerInfo';
 function Banner() {
   return (
     <section
-      className={`relative flex basis-[78.125%] cursor-pointer overflow-hidden rounded`}
+      className={`relative hidden basis-[78.125%] cursor-pointer overflow-hidden rounded sm:flex`}
     >
       <Image
         src={bannerImage}

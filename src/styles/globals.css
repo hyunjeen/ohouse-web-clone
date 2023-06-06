@@ -13,3 +13,8 @@ html {
 .swiper-button-prev:after, .swiper-button-next:after {
     width: 100% !important;
 }
+
+#side-banner > .swiper-wrapper {
+    position: absolute;
+    top: 0;
+}

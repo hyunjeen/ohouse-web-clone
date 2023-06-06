@@ -1,13 +1,18 @@
 import type { ChildrenProps } from '@/types/childrenProps';
+import { ClassNameProps } from '@/types/classNameProps';
+import React from 'react';
 
-function HeaderInnerWrap({ children }: ChildrenProps) {
+function HeaderInnerWrap({
+  children,
+  className,
+}: ChildrenProps & ClassNameProps) {
   return (
-    <div className={'border-b'}>
-      <div className={'m-auto flex max-w-7xl items-center  gap-3'}>
+    <div className={` w-full border-b bg-white ${className ? className : ''}`}>
+      <div className={'m-auto flex max-w-7xl items-center gap-3'}>
         {children}
       </div>
     </div>
   );
 }
 
-export default HeaderInnerWrap;
+export default React.memo(HeaderInnerWrap);

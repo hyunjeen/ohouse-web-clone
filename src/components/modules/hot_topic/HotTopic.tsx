@@ -6,6 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import React from 'react';
 
 SwiperCore.use([Navigation, Autoplay]);
 
@@ -51,4 +52,4 @@ function HotTopic() {
   );
 }
 
-export default HotTopic;
+export default React.memo(HotTopic);
