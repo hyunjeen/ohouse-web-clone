@@ -12,12 +12,12 @@ export const RegisterValidateSchema = yup.object().shape({
     .max(16, '비밀번호는 최대 16자리입니다!')
     .matches(
       /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{8,}[^\s]*$/,
-      '알파벳, 숫자, 공백을 제외한 특수문자를 모두 포함한 8자리 이상 입력해주세요'
+      '대소문자를 포함한 특수문자 숫자 조합으로 입력해주세요'
     )
     // .matches(regexPasswd, '비밀번호를 8~16자로 영문 대소문자, 숫자, 특수기호를 조합해서 사용하세요.')
     .required('비밀번호를 입력해주세요'),
   password1: yup
     .string()
-    .oneOf([yup.ref('pw'), undefined], '비밀번호가 일치하지 않습니다')
+    .oneOf([yup.ref('password'), undefined], '비밀번호가 일치하지 않습니다')
     .required('비밀번호를 한번 더 입력해주세요'),
 });

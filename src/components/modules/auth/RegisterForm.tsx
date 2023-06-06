@@ -1,4 +1,3 @@
-import React from 'react';
 import Label from '@/components/common/Label';
 import Input from '@/components/common/Input';
 import Button from '@/components/common/Button';
@@ -24,7 +23,7 @@ function RegisterForm() {
   return (
     <Form onSubmit={handleSubmit(onSubmitHandler)}>
       <h2 className={`flex justify-center text-2xl font-medium`}>회원가입</h2>
-      <div className={`mt-5 flex  w-full flex-col items-center`}>
+      <div className={`mt-5 flex w-full flex-col items-center`}>
         <Label name={'성함'}>
           <Input
             placeholder={'성함'}
@@ -50,6 +49,7 @@ function RegisterForm() {
         <Label name={'비밀번호'}>
           <Input
             placeholder={'비밀번호'}
+            autoComplete={'off'}
             {...register('password')}
             error={!!errors.password}
           />
@@ -61,6 +61,7 @@ function RegisterForm() {
         <Label name={'비밀번호 확인'}>
           <Input
             placeholder={'비밀번호 확인'}
+            autoComplete={'off'}
             {...register('password1')}
             error={!!errors.password1}
           />
