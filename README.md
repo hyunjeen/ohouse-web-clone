@@ -26,22 +26,18 @@ session 스토리지를이용하여 새로고침시에도 메뉴상태 유지
 
 - 핵심코드 
 ```typescript
-  const requestAnimation = debounce(() => {
+  const tScrollHandler = throttle(() => {
     scrollHandler();
-    requestRef.current = requestAnimationFrame(scrollHandler);
   }, delay);
 
   useEffect(() => {
-    window.addEventListener('scroll', requestAnimation);
+    window.addEventListener('scroll', tScrollHandler);
     return () => {
-      window.removeEventListener('scroll', requestAnimation);
-      if (requestRef.current) {
-        cancelAnimationFrame(requestRef.current);
-      }
+      window.removeEventListener('scroll', tScrollHandler);
     };
   }, [requestAnimation]);
 ```
-debounce함수와 requestanimation 함수를 섞어 구현  
+throttle로 구현  
 
 # 3
 [x] React-hook-form 과 yup을 이용한 폼 validator구현 

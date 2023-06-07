@@ -1,10 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
-import { debounce } from 'lodash-es';
+import { throttle } from 'lodash-es';
 
 export const useScrollToShow = (offset = 15, delay = 100) => {
   const [isShow, setIsShow] = useState<boolean>(true);
   const lastScrollTop = useRef<number>(0);
-  const requestRef = useRef<number>();
 
   const scrollHandler = () => {
     const currentScrollTop =
@@ -25,25 +24,18 @@ export const useScrollToShow = (offset = 15, delay = 100) => {
       }
     }
     lastScrollTop.current = currentScrollTop <= 0 ? 0 : currentScrollTop; // Scroll is at top
-    if (requestRef.current) {
-      cancelAnimationFrame(requestRef.current);
-    }
   };
 
-  const requestAnimation = debounce(() => {
+  const tScrollHandler = throttle(() => {
     scrollHandler();
-    requestRef.current = requestAnimationFrame(scrollHandler);
   }, delay);
 
   useEffect(() => {
-    window.addEventListener('scroll', requestAnimation);
+    window.addEventListener('scroll', tScrollHandler);
     return () => {
-      window.removeEventListener('scroll', requestAnimation);
-      if (requestRef.current) {
-        cancelAnimationFrame(requestRef.current);
-      }
+      window.removeEventListener('scroll', tScrollHandler);
     };
-  }, [requestAnimation]);
+  }, [tScrollHandler]);
 
   return isShow;
 };
