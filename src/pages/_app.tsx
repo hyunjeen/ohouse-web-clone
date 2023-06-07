@@ -9,7 +9,7 @@ import PagePathMiddleware from '@/middleware/PagePath.middleware';
 import Layout from '@/components/layout/Layout';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { noToSansKr } from '@/styles/font';
-
+import '@/config/axios.config';
 config.autoAddCss = false;
 
 export default function App({ Component, pageProps }: AppProps) {

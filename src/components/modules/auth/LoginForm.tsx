@@ -8,6 +8,8 @@ import { LoginValidateSchema } from '@/schema/LoginValidate.schema';
 import ErrorMessageBlock from '@/components/common/ErrorMessageBlock';
 import Form from '@/components/common/Form';
 import type { LoginDto } from '@/components/modules/auth/types';
+import { loginAxios } from '@/api/login';
+import { ToastContainer } from 'react-toastify';
 
 function LoginForm() {
   const {
@@ -16,8 +18,8 @@ function LoginForm() {
     formState: { errors },
   } = useForm<LoginDto>({ resolver: yupResolver(LoginValidateSchema) });
 
-  const onSubmitHandler = (data: LoginDto) => {
-    console.log(data.email);
+  const onSubmitHandler = async (data: LoginDto) => {
+    await loginAxios(data);
   };
 
   return (
@@ -47,12 +49,25 @@ function LoginForm() {
       </div>
       <div className={`flex w-full flex-col gap-4`}>
         <Button type={'submit'}>로그인</Button>
+
         <div className={`mt-5 flex justify-center gap-3`}>
           <Link href={'/un_users/new'}>회원가입</Link>
           <Link href={''}>비밀번호 재설정</Link>
         </div>
         <GoogleAuth />
       </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </Form>
   );
 }

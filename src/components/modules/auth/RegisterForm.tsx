@@ -8,6 +8,7 @@ import type { RegisterDto } from '@/components/modules/auth/types';
 import Form from '@/components/common/Form';
 import ErrorMessageBlock from '@/components/common/ErrorMessageBlock';
 import { RegisterValidateSchema } from '@/schema/RegisterValidate.schema';
+import { registerAxios } from '@/api/register';
 
 function RegisterForm() {
   const {
@@ -16,8 +17,10 @@ function RegisterForm() {
     formState: { errors },
   } = useForm<RegisterDto>({ resolver: yupResolver(RegisterValidateSchema) });
 
-  const onSubmitHandler = (data: RegisterDto) => {
-    console.log(data);
+  const onSubmitHandler = async (data: RegisterDto) => {
+    const { password1, ...user } = data;
+    const result = await registerAxios(user);
+    console.log(result);
   };
 
   return (
@@ -48,6 +51,7 @@ function RegisterForm() {
         />
         <Label name={'비밀번호'}>
           <Input
+            type={'password'}
             placeholder={'비밀번호'}
             autoComplete={'off'}
             {...register('password')}
@@ -60,6 +64,7 @@ function RegisterForm() {
         />
         <Label name={'비밀번호 확인'}>
           <Input
+            type={'password'}
             placeholder={'비밀번호 확인'}
             autoComplete={'off'}
             {...register('password1')}
