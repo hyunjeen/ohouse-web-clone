@@ -27,8 +27,8 @@ export const DummyListItem: DummyListItems[] = [
     title: '쇼핑',
     sub: [
       { id: 0, src: '/store', title: '쇼핑홈' },
-      { id: 1, src: '/asf', title: '카테고리' },
-      { id: 2, src: '/asf', title: '베스트' },
+      { id: 1, src: '/category', title: '카테고리' },
+      { id: 2, src: '/ranks', title: '베스트' },
       { id: 3, src: '/', title: '오늘의딜' },
     ],
   },
