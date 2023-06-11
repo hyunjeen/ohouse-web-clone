@@ -34,6 +34,5 @@ module.exports = {
     "import/no-anonymous-default-export": ["off"],
     "react/jsx-uses-react": ["off"],
     "react/react-in-jsx-scope": ["off"],
-
   },
 };

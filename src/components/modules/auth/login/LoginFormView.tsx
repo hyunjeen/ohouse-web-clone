@@ -7,23 +7,19 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { LoginValidateSchema } from '@/schema/LoginValidate.schema';
 import ErrorMessageBlock from '@/components/common/ErrorMessageBlock';
 import Form from '@/components/common/Form';
-import type { LoginDto } from '@/components/modules/auth/types';
-import { loginAxios } from '@/api/login';
+import type { LoginInputData } from '@/components/modules/auth/types';
 import { ToastContainer } from 'react-toastify';
+import { SubmitHandlerProp } from '@/components/modules/auth/types';
 
-function LoginForm() {
+function LoginFormView({ onSubmitHandler }: SubmitHandlerProp<LoginInputData>) {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginDto>({ resolver: yupResolver(LoginValidateSchema) });
-
-  const onSubmitHandler = async (data: LoginDto) => {
-    await loginAxios(data);
-  };
+  } = useForm<LoginInputData>({ resolver: yupResolver(LoginValidateSchema) });
 
   return (
-    <Form onSubmit={handleSubmit(onSubmitHandler)}>
+    <Form onSubmitHandler={handleSubmit(onSubmitHandler)}>
       <h2 className={`flex justify-center text-2xl font-medium`}>로그인</h2>
       <div className={`mt-5 flex w-full flex-col items-center gap-1`}>
         <Input
@@ -56,20 +52,9 @@ function LoginForm() {
         </div>
         <GoogleAuth />
       </div>
-      <ToastContainer
-        position="top-center"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
+      <ToastContainer />
     </Form>
   );
 }
 
-export default LoginForm;
+export default LoginFormView;

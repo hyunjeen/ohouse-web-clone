@@ -1,17 +1,17 @@
 import { ChildrenProps } from '@/types/childrenProps';
 
 interface FormProps extends ChildrenProps {
-  onSubmit: () => void;
+  onSubmitHandler: () => Promise<void>;
 }
 
-function Form({ children, onSubmit }: FormProps) {
+function Form({ children, onSubmitHandler }: FormProps) {
   return (
     <form
       className={
         'flex items-center justify-center ' +
         'm-auto h-full w-full max-w-[350px] flex-col'
       }
-      onSubmit={onSubmit}
+      onSubmit={onSubmitHandler}
     >
       {children}
     </form>

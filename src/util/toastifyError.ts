@@ -10,9 +10,5 @@ export const toastifyError = (message: string) => {
     draggable: true,
     progress: undefined,
     theme: 'light',
-    style: {
-      fontSize: '20px',
-      height: '100px',
-    },
   });
 };
