@@ -1,17 +1,16 @@
-interface Item {
+interface AbstractItem {
   id: number;
-  src: string;
   title: string;
 }
-
-interface ItemState extends Item {
-  sub: Item[];
+export interface MenuItemType extends AbstractItem {
+  sub: SubItemType[];
 }
+export interface SubItemType extends AbstractItem {
+  src: string;
+}
+export type MainItemType = SubItemType;
 
-export type DummyListItems = Omit<ItemState, 'src'>;
-export type MainDummyListItems = Omit<Item, 'sub'>;
-
-export const DummyListItem: DummyListItems[] = [
+export const MenuItems: MenuItemType[] = [
   {
     id: 0,
     title: '커뮤니티',

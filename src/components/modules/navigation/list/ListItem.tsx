@@ -2,7 +2,7 @@ import type { ChildrenProps } from '@/types/childrenProps';
 import Link from 'next/link';
 
 interface ListItemProps extends ChildrenProps {
-  primaryId: number;
+  menuId: number;
   currentId: number;
   src: string;
   sub?: boolean;
@@ -12,7 +12,7 @@ function ListItem(props: ListItemProps) {
   return (
     <li
       className={`flex items-center hover:text-blue-500 current:text-blue-500 ${
-        props.currentId === props.primaryId ? 'active' : ''
+        props.currentId === props.menuId ? 'active' : ''
       }`}
     >
       <Link

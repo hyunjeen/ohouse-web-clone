@@ -1,22 +1,17 @@
-import { useMemo } from 'react';
 import ListView from '@/components/modules/navigation/list/ListView';
-import { DummyListItem, MainDummyListItems } from '@/dummyData/menuItem.data';
+import { CurMenuOrderProps } from '@/components/layer/header/types';
+import { MenuItems } from '@/dummyData/menuItem.data';
+import { useMemo } from 'react';
 
 function SubNavigation({
-  mainOrder,
-  order,
-}: {
-  mainOrder: number;
-  order: number;
-}) {
-  const data: MainDummyListItems[][] = useMemo(
-    () => DummyListItem.map(({ sub }) => sub),
-    []
-  );
+  curMainMenuOrder,
+  curSubMenuOrder,
+}: CurMenuOrderProps) {
+  const [{ sub: subMenuItems }] = useMemo(() => {
+    return MenuItems.filter((value) => value.id === curMainMenuOrder);
+  }, [curMainMenuOrder]);
 
-  const viewData = useMemo(() => data[mainOrder], [data, mainOrder]);
-
-  return <ListView order={order} data={viewData} sub={true} />;
+  return <ListView order={curSubMenuOrder} data={subMenuItems} sub={true} />;
 }
 
 export default SubNavigation;

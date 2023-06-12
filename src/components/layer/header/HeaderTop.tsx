@@ -7,16 +7,16 @@ import { faCartPlus } from '@fortawesome/free-solid-svg-icons/faCartPlus';
 import LoginMenu from '@/components/modules/auth/LoginMenu';
 import HeaderInnerWrap from '@/components/layer/header/Header.innerWrap';
 import { useSelector } from 'react-redux';
-import { RootState } from '@/store/storeConfig';
+import { RootState } from '@/redux/store/storeConfig';
 
 function HeaderTop() {
-  const mainOrder = useSelector(
-    (state: RootState) => state.rootReducer.menuOrderReducer.mainMenuOrder
+  const curMainMenuOrder = useSelector(
+    (state: RootState) => state.currentMenuOrder.currentMainMenuOrder
   );
   return (
     <HeaderInnerWrap>
       <Logo />
-      <Navigation order={mainOrder} />
+      <Navigation order={curMainMenuOrder} />
       <SearchInput className={`hidden lg:flex`} />
       <FontAwesomeIcon icon={faCartPlus} className={'text-xl'} />
       <LoginMenu />

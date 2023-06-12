@@ -34,5 +34,9 @@ module.exports = {
     "import/no-anonymous-default-export": ["off"],
     "react/jsx-uses-react": ["off"],
     "react/react-in-jsx-scope": ["off"],
+    "@typescript-eslint/no-unused-vars": ["error", {
+      "argsIgnorePattern": "^_",
+      "varsIgnorePattern": "^_",
+      "caughtErrorsIgnorePattern": "^_"}]
   },
 };

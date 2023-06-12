@@ -1,4 +1,9 @@
+export interface MenuOrderState {
+  currentMainMenuOrder: number;
+  currentSubMenuOrder: number;
+}
 export interface User {
+  uuid: string;
   email: string;
   name: string;
 }

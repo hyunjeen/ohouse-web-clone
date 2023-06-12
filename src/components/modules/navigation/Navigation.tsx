@@ -1,20 +1,16 @@
-import React, { useMemo } from 'react';
 import ListView from '@/components/modules/navigation/list/ListView';
-import { DummyListItem, MainDummyListItems } from '@/dummyData/menuItem.data';
+import { MainItemType, MenuItems } from '@/dummyData/menuItem.data';
+
+const MainItems: MainItemType[] = MenuItems.map(({ id, title, sub }) => ({
+  id,
+  title,
+  src: sub[0].src,
+}));
 
 function Navigation({ order }: { order: number }) {
-  const data: MainDummyListItems[] = useMemo(
-    () =>
-      DummyListItem.map(({ title, id, sub }) => ({
-        title,
-        id,
-        src: sub[0].src,
-      })),
-    []
-  );
   return (
     <div className={`sticky mr-auto text-[18px] font-medium`}>
-      <ListView order={order} data={data} />
+      <ListView order={order} data={MainItems} />
     </div>
   );
 }

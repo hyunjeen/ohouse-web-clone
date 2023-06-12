@@ -1,4 +1,5 @@
 export interface LoginAxiosResponse {
+  uuid: string;
   email: string;
   name: string;
   accessToken: string;

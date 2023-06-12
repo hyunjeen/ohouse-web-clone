@@ -3,18 +3,21 @@ import SubNavigation from '@/components/modules/navigation/SubNavigation';
 import HotTopic from '@/components/modules/hot_topic/HotTopic';
 import HeaderInnerWrap from '@/components/layer/header/Header.innerWrap';
 import { useSelector } from 'react-redux';
-import { RootState } from '@/store/storeConfig';
+import { RootState } from '@/redux/store/storeConfig';
 
 function HeaderBottom() {
-  const mainOrder = useSelector(
-    (state: RootState) => state.rootReducer.menuOrderReducer.mainMenuOrder
+  const curMainMenuOrder = useSelector(
+    (state: RootState) => state.currentMenuOrder.currentMainMenuOrder
   );
-  const subOrder = useSelector(
-    (state: RootState) => state.rootReducer.menuOrderReducer.subMenuOrder
+  const curSubMenuOrder = useSelector(
+    (state: RootState) => state.currentMenuOrder.currentSubMenuOrder
   );
   return (
     <HeaderInnerWrap>
-      <SubNavigation mainOrder={mainOrder} order={subOrder} />
+      <SubNavigation
+        curMainMenuOrder={curMainMenuOrder}
+        curSubMenuOrder={curSubMenuOrder}
+      />
       <HotTopic />
     </HeaderInnerWrap>
   );

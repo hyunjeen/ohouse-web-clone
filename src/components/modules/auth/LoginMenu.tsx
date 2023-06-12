@@ -4,12 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/router';
 import { useSelector } from 'react-redux';
-import { RootState } from '@/store/storeConfig';
+import { RootState } from '@/redux/store/storeConfig';
 
 function LoginMenu() {
-  const isLogin = useSelector(
-    (state: RootState) => state.rootReducer.userReducer.isLogin
-  );
+  const isLogin = useSelector((state: RootState) => state.user.isLogin);
   const router = useRouter();
   const redirectUrl = router.pathname.replaceAll('/', '%2F');
 
