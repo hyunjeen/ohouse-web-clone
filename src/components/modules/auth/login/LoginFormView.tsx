@@ -3,20 +3,18 @@ import Button from '@/components/common/Button';
 import Link from 'next/link';
 import GoogleAuth from '@/components/common/GoogleAuth';
 import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { LoginValidateSchema } from '@/schema/LoginValidate.schema';
 import ErrorMessageBlock from '@/components/common/ErrorMessageBlock';
 import Form from '@/components/common/Form';
-import type { LoginInputData } from '@/components/modules/auth/types';
 import { ToastContainer } from 'react-toastify';
 import { SubmitHandlerProp } from '@/components/modules/auth/types';
+import { loginResolver, LoginValidator } from '@/validator/loginValidator';
 
-function LoginFormView({ onSubmitHandler }: SubmitHandlerProp<LoginInputData>) {
+function LoginFormView({ onSubmitHandler }: SubmitHandlerProp<LoginValidator>) {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginInputData>({ resolver: yupResolver(LoginValidateSchema) });
+  } = useForm<LoginValidator>({ resolver: loginResolver });
 
   return (
     <Form onSubmitHandler={handleSubmit(onSubmitHandler)}>

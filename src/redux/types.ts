@@ -9,7 +9,7 @@ export interface User {
 }
 
 export interface UserSliceState {
-  isLogin: boolean;
+  status: 'loading' | 'error' | 'success' | null;
   user: User | null;
   accessToken: string;
 }

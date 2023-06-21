@@ -1,21 +1,14 @@
 import LoginFormView from '@/components/modules/auth/login/LoginFormView';
-import { LoginInputData } from '@/components/modules/auth/types';
-import { loginAxios } from '@/api/auth';
-import { useDispatch } from 'react-redux';
-import { setUser } from '@/redux/slice/user.slice';
-import { useRouter } from 'next/router';
+
+import { toastifyError } from '@/util/toastifyError';
+import { useLoginHook } from '@/hooks/useLoginHook';
 
 function LoginForm() {
-  const dispatch = useDispatch();
-  const router = useRouter();
-  const onSubmitHandler = async (data: LoginInputData) => {
-    const result = await loginAxios(data);
-    if (result) {
-      const { accessToken, ...user } = result;
-      dispatch(setUser({ user, accessToken }));
-      void router.replace('/');
-    }
-  };
+  const { errorStatus, errorMessage, onSubmitHandler, errorReset } =
+    useLoginHook();
+  if (errorStatus) {
+    toastifyError(errorMessage, errorReset);
+  }
 
   return <LoginFormView onSubmitHandler={onSubmitHandler} />;
 }

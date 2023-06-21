@@ -1,8 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import type { User, UserSliceState } from '@/redux/types';
+import { persistReducer, PURGE } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 const initialState: UserSliceState = {
-  isLogin: false,
+  status: null,
   user: null,
   accessToken: '',
 };
@@ -14,11 +16,27 @@ export const userSlice = createSlice({
       state,
       action: PayloadAction<{ user: User; accessToken: string }>
     ) => {
-      state.isLogin = true;
+      state.status = 'success';
       state.user = action.payload.user;
       state.accessToken = action.payload.accessToken;
     },
+    reset: (state) => {
+      state.status = null;
+      state.user = null;
+      state.accessToken = '';
+    },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(PURGE, () => initialState);
   },
 });
-export const userReducer = userSlice.reducer;
-export const { setUser } = userSlice.actions;
+const _userReducer = userSlice.reducer;
+
+const persistConfig = {
+  key: 'root',
+  storage,
+  whitelist: ['user', 'status', 'accessToken'],
+};
+
+export const userReducer = persistReducer(persistConfig, _userReducer);
+export const { setUser, reset } = userSlice.actions;

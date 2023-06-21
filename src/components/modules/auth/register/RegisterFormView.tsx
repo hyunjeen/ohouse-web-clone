@@ -6,22 +6,21 @@ import Form from '@/components/common/Form';
 import ErrorMessageBlock from '@/components/common/ErrorMessageBlock';
 import { ToastContainer } from 'react-toastify';
 import { useForm } from 'react-hook-form';
-import type {
-  RegisterInputData,
-  SubmitHandlerProp,
-} from '@/components/modules/auth/types';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { RegisterValidateSchema } from '@/schema/RegisterValidate.schema';
+import type { SubmitHandlerProp } from '@/components/modules/auth/types';
+import {
+  registerResolver,
+  RegisterValidator,
+} from '@/validator/registerValidator';
 
 function RegisterForm({
   onSubmitHandler,
-}: SubmitHandlerProp<RegisterInputData>) {
+}: SubmitHandlerProp<RegisterValidator>) {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<RegisterInputData>({
-    resolver: yupResolver(RegisterValidateSchema),
+  } = useForm<RegisterValidator>({
+    resolver: registerResolver,
   });
 
   return (

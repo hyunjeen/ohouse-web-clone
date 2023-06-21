@@ -2,21 +2,11 @@ import Banner from '@/components/modules/banner/Banner';
 import SideBanner from '@/components/modules/side_banner/SideBanner';
 import ServiceMenu from '@/components/modules/service_menu/ServiceMenu';
 import Products from '@/components/modules/products/Products';
-import { useRouter } from 'next/router';
 import { ToastContainer } from 'react-toastify';
-import { useEffect } from 'react';
-import { toastifyDefault } from '@/util/toastifyDefault';
+import { usePopup } from '@/hooks/usePopup';
 
 function Index() {
-  const { query } = useRouter();
-
-  useEffect(() => {
-    const isPopup = window.sessionStorage.getItem('signup_popup');
-    if (isPopup == null && query.signup_popup == 'true') {
-      toastifyDefault('회원가입을 축하합니다');
-      window.sessionStorage.setItem('signup_popup', 'true');
-    }
-  }, [query]);
+  usePopup();
   return (
     <div className={`m-auto flex max-w-[var(--max-container-size)] flex-col`}>
       <div
