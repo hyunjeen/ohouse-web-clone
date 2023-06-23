@@ -25,10 +25,7 @@ function LoginFormView({ onSubmitHandler }: SubmitHandlerProp<LoginValidator>) {
           {...register('email')}
           error={!!errors.email}
         />
-        <ErrorMessageBlock
-          error={!!errors.email}
-          message={errors.email?.message}
-        />
+        <ErrorMessageBlock message={errors.email?.message} />
         <Input
           type={'password'}
           error={!!errors.password}
@@ -36,10 +33,7 @@ function LoginFormView({ onSubmitHandler }: SubmitHandlerProp<LoginValidator>) {
           autoComplete="off"
           {...register('password')}
         />
-        <ErrorMessageBlock
-          error={!!errors.password}
-          message={errors.password?.message}
-        />
+        <ErrorMessageBlock message={errors.password?.message} />
       </div>
       <div className={`flex w-full flex-col gap-4`}>
         <Button type={'submit'}>로그인</Button>

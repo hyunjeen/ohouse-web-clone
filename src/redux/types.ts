@@ -2,6 +2,9 @@ export interface MenuOrderState {
   currentMainMenuOrder: number;
   currentSubMenuOrder: number;
 }
+export interface ProductImagesState {
+  images: File[];
+}
 export interface User {
   uuid: string;
   email: string;

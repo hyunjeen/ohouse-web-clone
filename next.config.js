@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   images: {
     deviceSizes: [320, 420, 768, 1024],
     imageSizes: [],
@@ -9,7 +9,7 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'storage.googleapis.com',
         port: '',
-        pathname: '/dev_hyunjeen_bucket/**',
+        pathname: `/ohhouse-products-images/**`,
       },
     ],
   },

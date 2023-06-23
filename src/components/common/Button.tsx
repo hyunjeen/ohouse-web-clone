@@ -1,14 +1,14 @@
 import type { ChildrenProps } from '@/types/childrenProps';
+import { ButtonHTMLAttributes } from 'react';
 
-interface ButtonProps extends ChildrenProps {
-  type?: 'submit';
-}
-
-function Button({ children, type }: ButtonProps) {
+function Button({
+  children,
+  ...props
+}: ChildrenProps & ButtonHTMLAttributes<HTMLButtonElement>) {
   return (
     <button
-      className={`mt-5 w-full rounded bg-blue-400 py-4 text-white`}
-      type={type || 'button'}
+      {...props}
+      className={`mt-5 rounded bg-blue-400 py-4 text-white ${props.className}`}
     >
       {children}
     </button>

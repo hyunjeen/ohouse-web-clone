@@ -28,56 +28,46 @@ function RegisterForm({
       <Form onSubmitHandler={handleSubmit(onSubmitHandler)}>
         <h2 className={`flex justify-center text-2xl font-medium`}>회원가입</h2>
         <div className={`mt-5 flex w-full flex-col items-center`}>
-          <Label name={'성함'}>
-            <Input
-              placeholder={'성함'}
-              {...register('name')}
-              error={!!errors.name}
-            />
-          </Label>
-          <ErrorMessageBlock
+          <Label title={'성함'} htmlFor={'name'} />
+          <Input
+            id={'name'}
+            placeholder={'성함'}
+            {...register('name')}
             error={!!errors.name}
-            message={errors.name?.message}
           />
-          <Label name={'이메일'}>
-            <Input
-              placeholder={'이메일'}
-              {...register('email')}
-              error={!!errors.email}
-            />
-          </Label>
-          <ErrorMessageBlock
+          <ErrorMessageBlock message={errors.name?.message} />
+          <Label title={'이메일'} htmlFor={'email'} />
+          <Input
+            id={'email'}
+            placeholder={'이메일'}
+            {...register('email')}
             error={!!errors.email}
-            message={errors.email?.message}
           />
-          <Label name={'비밀번호'}>
-            <Input
-              type={'password'}
-              placeholder={'비밀번호'}
-              autoComplete={'off'}
-              {...register('password')}
-              error={!!errors.password}
-            />
-          </Label>
-          <ErrorMessageBlock
+          <ErrorMessageBlock message={errors.email?.message} />
+          <Label title={'비밀번호'} htmlFor={'password'} />
+          <Input
+            id={'password'}
+            type={'password'}
+            placeholder={'비밀번호'}
+            autoComplete={'off'}
+            {...register('password')}
             error={!!errors.password}
-            message={errors.password?.message}
           />
-          <Label name={'비밀번호 확인'}>
-            <Input
-              type={'password'}
-              placeholder={'비밀번호 확인'}
-              autoComplete={'off'}
-              {...register('password1')}
-              error={!!errors.password1}
-            />
-          </Label>
-          <ErrorMessageBlock
+          <ErrorMessageBlock message={errors.password?.message} />
+          <Label title={'비밀번호 확인'} htmlFor={'password1'} />
+          <Input
+            id={'password1'}
+            type={'password'}
+            placeholder={'비밀번호 확인'}
+            autoComplete={'off'}
+            {...register('password1')}
             error={!!errors.password1}
-            message={errors.password1?.message}
           />
+          <ErrorMessageBlock message={errors.password1?.message} />
         </div>
-        <Button type={'submit'}>회원가입</Button>
+        <Button type={'submit'} className={'w-full'}>
+          회원가입
+        </Button>
         <GoogleAuth />
       </Form>
       <ToastContainer />

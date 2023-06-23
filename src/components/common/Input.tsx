@@ -1,28 +1,22 @@
-import { ForwardedRef, forwardRef } from 'react';
+import { ForwardedRef, forwardRef, InputHTMLAttributes } from 'react';
 
-interface InputProps {
-  placeholder: string;
-  type?: string;
-  autoComplete?: `off`;
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   error?: boolean;
 }
 
 const Input = forwardRef(
-  (
-    { placeholder, error, type, autoComplete, ...props }: InputProps,
-    ref: ForwardedRef<HTMLInputElement>
-  ) => (
-    <input
-      ref={ref}
-      type={type}
-      className={`h-[50px] w-full rounded border px-4 py-3 outline-0 ${
-        error ? 'border-red-600' : ''
-      }`}
-      autoComplete={autoComplete}
-      placeholder={placeholder}
-      {...props}
-    />
-  )
+  (props: InputProps, ref: ForwardedRef<HTMLInputElement>) => {
+    const { error, className, ...rest } = props;
+    return (
+      <input
+        ref={ref}
+        {...rest}
+        className={`h-[50px] w-full rounded border px-4 py-3 outline-0 ${
+          error ? 'border-red-600' : ''
+        }${className}`}
+      />
+    );
+  }
 );
 Input.displayName = 'Input';
 export default Input;

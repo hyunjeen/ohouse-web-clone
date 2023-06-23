@@ -1,11 +1,9 @@
 import React from 'react';
-import { ChildrenProps } from '@/types/childrenProps';
 
-function Label({ children, name }: ChildrenProps & { name: string }) {
+function Label({ title, htmlFor }: { htmlFor: string; title: string }) {
   return (
-    <label className={`mt-4 w-full`}>
-      <p className={`mb-3 font-bold`}>{name}</p>
-      {children}
+    <label className={`mt-4 w-full`} htmlFor={htmlFor}>
+      <p className={`mb-1 font-bold`}>{title}</p>
     </label>
   );
 }
