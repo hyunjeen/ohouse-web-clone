@@ -3,7 +3,6 @@ import { useGetProductsQuery } from '@/services/productApi';
 
 function Products() {
   const { data, isFetching, isLoading } = useGetProductsQuery();
-  console.log(data);
   if (isFetching) {
     return <div>로딩중</div>;
   }

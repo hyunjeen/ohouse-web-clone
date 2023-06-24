@@ -2,7 +2,6 @@ import Image from 'next/image';
 import { ProductItem } from '@/services/types';
 
 function ProductsItem({ title, productImg }: ProductItem) {
-  console.log(productImg);
   return (
     <li className={`overflow-hidden rounded`}>
       <div
