@@ -8,11 +8,11 @@
   "/": "pages/index.html",
   "/products/new": "pages/products/new.html",
   "/projects": "pages/projects.html",
-  "/ranks": "pages/ranks.html",
   "/store": "pages/store.html",
-  "/today_deals": "pages/today_deals.html",
   "/topics/recommend": "pages/topics/recommend.html",
+  "/today_deals": "pages/today_deals.html",
   "/un_users/new": "pages/un_users/new.js",
   "/users/sign_in": "pages/users/sign_in.js",
+  "/ranks": "pages/ranks.html",
   "/_error": "pages/_error.js"
 }

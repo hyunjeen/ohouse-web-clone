@@ -3,7 +3,8 @@
     "/_app": []
   },
   "app": {
-    "/Users/hyunjeen/WebstormProjects/untitled1/node_modules/next/font/google/target.css?{\"path\":\"src/styles/font.ts\",\"import\":\"Noto_Sans_KR\",\"arguments\":[{\"subsets\":[\"latin\"],\"weight\":[\"400\",\"500\",\"700\"],\"display\":\"swap\"}],\"variableName\":\"noToSansKr\"}": []
+    "/Users/hyunjeen/WebstormProjects/untitled1/node_modules/next/font/google/target.css?{\"path\":\"src/styles/font.ts\",\"import\":\"Noto_Sans_KR\",\"arguments\":[{\"subsets\":[\"latin\"],\"weight\":[\"400\",\"500\",\"700\"],\"display\":\"swap\"}],\"variableName\":\"noToSansKr\"}": [],
+    "/Users/hyunjeen/WebstormProjects/untitled1/node_modules/next/font/google/target.css.webpack[javascript/auto]!=!/Users/hyunjeen/WebstormProjects/untitled1/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[1].oneOf[3].use[1]!/Users/hyunjeen/WebstormProjects/untitled1/node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[1].oneOf[3].use[2]!/Users/hyunjeen/WebstormProjects/untitled1/node_modules/next/font/google/target.css?{\"path\":\"src/styles/font.ts\",\"import\":\"Noto_Sans_KR\",\"arguments\":[{\"subsets\":[\"latin\"],\"weight\":[\"400\",\"500\",\"700\"],\"display\":\"swap\"}],\"variableName\":\"noToSansKr\"}": []
   },
   "appUsingSizeAdjust": true,
   "pagesUsingSizeAdjust": true
