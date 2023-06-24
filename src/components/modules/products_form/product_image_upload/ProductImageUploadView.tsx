@@ -3,6 +3,7 @@ import Button from '@/components/common/Button';
 import Input from '@/components/common/Input';
 
 function ProductImageUploadView({
+  imagesLength,
   onChange,
   images,
   removeFile,
@@ -10,6 +11,7 @@ function ProductImageUploadView({
   images: File[];
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   removeFile: (index: number) => void;
+  imagesLength: number;
 }) {
   const imageRef = useRef<HTMLInputElement | null>(null);
   const onClickHandler = (e: React.MouseEvent) => {
@@ -29,7 +31,12 @@ function ProductImageUploadView({
           images.map((image, index) => (
             <div key={index}>
               <p>{image.name}</p>
-              <button onClick={(e) => onButtonClickHandler(e, index)}>
+              <button
+                className={
+                  'mt-2 rounded-full bg-gray-400 px-1 text-sm text-white'
+                }
+                onClick={(e) => onButtonClickHandler(e, index)}
+              >
                 Delete
               </button>
             </div>
@@ -39,12 +46,20 @@ function ProductImageUploadView({
         )}
       </div>
       <Button
-        className={'inline-block w-[150px] py-2'}
+        className={` inline-block w-[150px] py-2 disabled:cursor-not-allowed disabled:bg-gray-400`}
         onClick={onClickHandler}
+        disabled={imagesLength == 3}
       >
         사진 업로드
       </Button>
-      <Input ref={imageRef} type={'file'} hidden multiple onChange={onChange} />
+      <Input
+        ref={imageRef}
+        type={'file'}
+        hidden
+        multiple
+        onChange={onChange}
+        accept={'image/jpeg, image/jpg, image/png'}
+      />
     </div>
   );
 }
