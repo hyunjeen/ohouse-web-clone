@@ -1,0 +1,10 @@
+{
+  "pages": {
+    "/_app": []
+  },
+  "app": {
+    "/Users/hyunjeen/WebstormProjects/untitled1/node_modules/next/font/google/target.css?{\"path\":\"src/styles/font.ts\",\"import\":\"Noto_Sans_KR\",\"arguments\":[{\"subsets\":[\"latin\"],\"weight\":[\"400\",\"500\",\"700\"],\"display\":\"swap\"}],\"variableName\":\"noToSansKr\"}": []
+  },
+  "appUsingSizeAdjust": true,
+  "pagesUsingSizeAdjust": true
+}
