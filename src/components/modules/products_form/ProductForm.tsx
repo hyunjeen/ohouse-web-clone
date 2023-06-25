@@ -23,26 +23,24 @@ function ProductForm() {
   const router = useRouter();
   const [createProduct, { isLoading }] = useCreateProductMutation();
   const onSubmit = async (data: ProductVal) => {
-    console.log(data);
     const { images, ...rest } = data;
     const formData = new FormData();
     for (let i = 0; i < images.length; i++) {
       formData.append('images', images[i]);
     }
-    for (const key in rest) {
+    Object.keys(rest).forEach((key) => {
       const value: string = rest[key as keyof typeof rest];
       formData.append(key, value);
-    }
-    const result = await createProduct(formData);
-    if (result) {
-      toast.success('상품등록이 완료되었습니다', {
-        position: 'top-center',
-      });
-      toast.onChange((toast1) => {
-        console.log(toast1);
+    });
+    await toast.promise(createProduct(formData), {
+      success: '상품등록이 완료되엇습니다',
+      error: '상품들록에 실패했습니다',
+    });
+    toast.onChange((toast) => {
+      if (toast.status === 'removed') {
         router.push('/');
-      });
-    }
+      }
+    });
   };
 
   return (
@@ -58,6 +56,7 @@ function ProductForm() {
               id={'price'}
               type={'number'}
               defaultValue={0}
+              min={0}
               step={1000}
             />
           </div>
@@ -68,7 +67,7 @@ function ProductForm() {
               placeholder="재고"
               type={'number'}
               defaultValue={0}
-              min={1}
+              min={0}
             />
           </div>
           <div className={'flex gap-10'}>
@@ -90,7 +89,7 @@ function ProductForm() {
       >
         {isLoading ? <PulseLoader color="#36d7b7" /> : '등록'}
       </Button>
-      <ToastContainer autoClose={1000} />
+      <ToastContainer autoClose={500} position={'top-center'} />
     </form>
   );
 }
