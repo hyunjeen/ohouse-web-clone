@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[77],{7869:function(n,u,t){(window.__NEXT_P=window.__NEXT_P||[]).push(["/card_collections",function(){return t(4315)}])},4315:function(n,u,t){"use strict";t.r(u);var _=t(5893);t(7294),u.default=function(){return(0,_.jsx)("div",{})}}},function(n){n.O(0,[774,888,179],function(){return n(n.s=7869)}),_N_E=n.O()}]);
